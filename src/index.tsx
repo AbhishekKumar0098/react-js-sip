@@ -8,10 +8,14 @@ export const Name = () => {
       <button
         onClick={() => {
           setFirst("Abhishekk");
-        }}>Change Name</button>
+        }}>
+        Change Name
+      </button>
     </div>
   );
 };
+export const Test = () => {
+  return <div>Test</div>;
+};
 
 // Export the component to be accessed globally
-export default Name;
