@@ -7,14 +7,14 @@ module.exports = {
     path: path.resolve(__dirname, "dist"), // output folder
     library: "CapanicusSip", // name of the global variable
     libraryTarget: "umd", // format that works for both Node and browser
-    clean: true, // clear dist folder before each build
+    clean: true
   },
   stats: {
     children: true, // Include more detailed information about child compilations
   },
   externals: {
-    react: "React",  // React will be provided externally
-    "react-dom": "ReactDOM",  // ReactDOM will be provided externally
+    react: "React", // React will be provided externally
+    "react-dom": "ReactDOM", // ReactDOM will be provided externally
   },
   module: {
     rules: [
