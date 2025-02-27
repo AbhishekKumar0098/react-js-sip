@@ -1,19 +1,18 @@
 // webpack.config.js
 
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
 
 module.exports = {
-  entry: './src/index.js', // entry point of your script
+  entry: "./src/index.js", // entry point of your script
   output: {
-    filename: 'bundle.js', // the bundled output file
-    path: path.resolve(__dirname, 'dist'), // output folder
-    library: 'ReactModalUtils', // name of the global variable
-    libraryTarget: 'umd', // format that works for both Node and browser
+    filename: "bundle.js", // the bundled output file
+    path: path.resolve(__dirname, "dist"), // output folder
+    library: "ReactModalUtils", // name of the global variable
+    libraryTarget: "umd", // format that works for both Node and browser
     clean: true, // clear dist folder before each build
   },
   stats: {
-    children: true,  // Include more detailed information about child compilations
+    children: true, // Include more detailed information about child compilations
   },
   module: {
     rules: [
@@ -21,25 +20,21 @@ module.exports = {
         test: /\.jsx?$/, // Transpile JS/JSX
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
+            presets: ["@babel/preset-env", "@babel/preset-react"],
           },
         },
       },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: [".js", ".jsx"],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './public/index.html', // create an index.html for testing locally
-    }),
-  ],
+
   devServer: {
-    contentBase: './dist',
+    contentBase: "./dist",
     port: 3000,
   },
-  mode: 'production',
+  mode: "production",
 };
