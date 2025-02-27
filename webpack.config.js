@@ -12,6 +12,10 @@ module.exports = {
   stats: {
     children: true, // Include more detailed information about child compilations
   },
+  externals: {
+    react: "React",  // React will be provided externally
+    "react-dom": "ReactDOM",  // ReactDOM will be provided externally
+  },
   module: {
     rules: [
       {
