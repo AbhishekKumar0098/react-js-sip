@@ -1,13 +1,11 @@
-// webpack.config.js
-
 const path = require("path");
 
 module.exports = {
-  entry: "./src/index.js", // entry point of your script
+  entry: "./src/index.tsx", // entry point now includes TypeScript (tsx)
   output: {
     filename: "bundle.js", // the bundled output file
     path: path.resolve(__dirname, "dist"), // output folder
-    library: "ReactModalUtils", // name of the global variable
+    library: "CapanicusSip", // name of the global variable
     libraryTarget: "umd", // format that works for both Node and browser
     clean: true, // clear dist folder before each build
   },
@@ -17,19 +15,22 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/, // Transpile JS/JSX
+        test: /\.tsx?$/, // Handle both .ts and .tsx files
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
+            presets: [
+              "@babel/preset-env", // Transpile modern JavaScript
+              "@babel/preset-react", // Handle React JSX
+            ],
           },
         },
       },
     ],
   },
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".js", ".jsx", ".ts", ".tsx"], // Resolve .ts and .tsx files
   },
 
   devServer: {

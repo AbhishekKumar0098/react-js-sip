@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es5", // Set JavaScript target version (older browsers)
+    "lib": ["dom", "esnext"], // Include libraries like DOM and modern JS features
+    "jsx": "react", // Enable JSX for React
+    "module": "esnext", // Use modern module system
+    "moduleResolution": "node", // Resolve modules like Node.js
+    "strict": true, // Enable strict type checking
+    "esModuleInterop": true, // Allow importing commonjs modules
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true // Ensure file name casing is consistent
+  },
+  "include": ["src/**/*"], // Include all TypeScript/JSX files in the src folder
+  "exclude": ["node_modules", "dist"] // Exclude node_modules and dist folder
+}
