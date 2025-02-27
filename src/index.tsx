@@ -7,7 +7,7 @@ export const Name = () => {
       {first}
       <button
         onClick={() => {
-          setFirst("Abhishek");
+          setFirst("Abhishekk");
         }}>Change Name</button>
     </div>
   );
